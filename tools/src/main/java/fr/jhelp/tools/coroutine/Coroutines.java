@@ -2,8 +2,11 @@ package fr.jhelp.tools.coroutine;
 
 import androidx.annotation.NonNull;
 
+import java.util.function.Consumer;
+
 import kotlin.coroutines.EmptyCoroutineContext;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.flow.Flow;
 
 public class Coroutines {
     /**
@@ -32,4 +35,17 @@ public class Coroutines {
     public static void launchIO(@NonNull final Runnable action) {
         Dispatchers.getIO().dispatch(EmptyCoroutineContext.INSTANCE, action);
     }
+
+    public static <T> void collectFlow(@NonNull final Flow<T> flow, @NonNull final Consumer<T> action) {
+        Coroutines.launch(() -> flow.collect(new ConsumerToFlowCollector<T>(action), new DoesNotingContinuation<>(Dispatchers.getDefault())));
+    }
+
+    public static <T> void collectFlowMain(@NonNull final Flow<T> flow, @NonNull final Consumer<T> action) {
+        Coroutines.launchMain(() -> flow.collect(new ConsumerToFlowCollector<T>(action), new DoesNotingContinuation<>(Dispatchers.getMain())));
+    }
+
+    public static <T> void collectFlowIO(@NonNull final Flow<T> flow, @NonNull final Consumer<T> action) {
+        Coroutines.launchIO(() -> flow.collect(new ConsumerToFlowCollector<T>(action), new DoesNotingContinuation<>(Dispatchers.getIO())));
+    }
+
 }

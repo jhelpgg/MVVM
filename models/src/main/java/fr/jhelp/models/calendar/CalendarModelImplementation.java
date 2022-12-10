@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.SharedFlowKt;
 
 final class CalendarModelImplementation extends CalendarModel {
     private final MutableSharedFlow<CalendarEvent> events =
-            SharedFlowKt.<CalendarEvent>MutableSharedFlow(0, 0, BufferOverflow.DROP_OLDEST);
+            SharedFlowKt.<CalendarEvent>MutableSharedFlow(0, 0, BufferOverflow.SUSPEND);
     private final ArrayList<CalendarElement> elements = new ArrayList<CalendarElement>();
 
     @NonNull
