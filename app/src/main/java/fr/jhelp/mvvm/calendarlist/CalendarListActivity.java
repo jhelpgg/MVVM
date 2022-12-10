@@ -1,5 +1,6 @@
 package fr.jhelp.mvvm.calendarlist;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,6 +15,7 @@ import fr.jhelp.models.calendar.CalendarModel;
 import fr.jhelp.mvvm.R;
 import fr.jhelp.tools.Tools;
 import fr.jhelp.tools.coroutine.Coroutines;
+import fr.jhelp.tools.injector.Injector;
 
 public class CalendarListActivity extends AppCompatActivity {
 
@@ -21,6 +23,8 @@ public class CalendarListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_calendar);
+
+        Injector.inject(Context.class, this.getApplicationContext());
 
         final RecyclerView recyclerView = this.findViewById(R.id.calendarListRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
