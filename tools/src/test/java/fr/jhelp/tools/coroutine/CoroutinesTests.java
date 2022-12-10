@@ -29,7 +29,7 @@ public class CoroutinesTests {
                 };
 
         for (int time = 0; time < 10; time++) {
-            Coroutines.launchDefault(action);
+            Coroutines.launch(action);
         }
 
         Tools.sleep(2048);

@@ -20,7 +20,7 @@ public class Coroutines {
      *
      * @param action Action to launch
      */
-    public static void launchDefault(@NonNull final Runnable action) {
+    public static void launch(@NonNull final Runnable action) {
         Dispatchers.getDefault().dispatch(EmptyCoroutineContext.INSTANCE, action);
     }
 
