@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="startEndParent">8dp</dimen>
+    <dimen name="topBottomParent">16dp</dimen>
+
+    <dimen name="near">8dp</dimen>
+    <dimen name="next">16dp</dimen>
+    <dimen name="far">32dp</dimen>
+
+    <dimen name="small">12sp</dimen>
+    <dimen name="normal">16sp</dimen>
+    <dimen name="title">24sp</dimen>
+    <dimen name="big">32sp</dimen>
+</resources>

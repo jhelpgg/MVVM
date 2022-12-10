@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MVVM</string>
+
+    <string name="calendarListTitle">Calendar</string>
+    <string name="calendarListAddElement">Add element</string>
+
+    <string name="elementCalendarDate" translatable="false">yyyy/MM/dd hh:mm:ss</string>
+    <string name="elementCalendarDescription" translatable="false">Description.\nThis is a description !\nThanks mister obvious.</string>
 </resources>
