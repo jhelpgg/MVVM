@@ -16,3 +16,4 @@ rootProject.name = "MVVM"
 include ':app'
 include ':tools'
 include ':models'
+include ':data'

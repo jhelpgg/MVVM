@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'fr.jhelp.models'
+    namespace 'fr.jhelp.data'
     compileSdk 32
 
     defaultConfig {
@@ -30,9 +30,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
 
-    implementation(project(":data"))
     implementation(project(":tools"))
 
     testImplementation 'junit:junit:4.13.2'
